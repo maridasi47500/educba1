@@ -7,12 +7,13 @@
 #   Character.create(name: "Luke", movie: movies.first)
 Cat.destroy_all
 Cat.create(name:"data science")
-Cat.create(name:"programming")
+Cat.create(name:"programming software development")
 Cat.create(name:"finance")
 Cat.create(name:"excel")
 Cat.create(name:"marketing")
-Cat.create(name:"hr")
-Cat.create(name:"pdp")
+Cat.create(name:"project management")
+Cat.create(name:"human resource")
+Cat.create(name:"personal development")
 Cat.create(name:"vfx and design")
 hey="""
 3D Graphics & Animations
