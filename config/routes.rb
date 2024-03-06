@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :othercats
+  resources :cats, path: "cat"
+  get "featuredskill", to: 'featuredskill#hey'
   get 'home/index'
   devise_for :users, controllers: { registrations: 'users/registrations',sessions: 'users/sessions' }
   root "home#index"

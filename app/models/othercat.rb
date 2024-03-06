@@ -1,0 +1,2 @@
+class Othercat < ApplicationRecord
+end

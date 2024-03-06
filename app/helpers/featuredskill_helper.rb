@@ -1,0 +1,2 @@
+module FeaturedskillHelper
+end

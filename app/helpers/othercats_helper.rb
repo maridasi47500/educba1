@@ -1,0 +1,2 @@
+module OthercatsHelper
+end

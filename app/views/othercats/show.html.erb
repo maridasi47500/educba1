@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @othercat %>
+
+<div>
+  <%= link_to "Edit this othercat", edit_othercat_path(@othercat) %> |
+  <%= link_to "Back to othercats", othercats_path %>
+
+  <%= button_to "Destroy this othercat", @othercat, method: :delete %>
+</div>
