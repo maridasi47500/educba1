@@ -6,15 +6,128 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 Cat.destroy_all
-Cat.create(name:"data science")
-Cat.create(name:"programming software development")
-Cat.create(name:"finance")
-Cat.create(name:"excel")
-Cat.create(name:"marketing")
-Cat.create(name:"project management")
-Cat.create(name:"human resource")
-Cat.create(name:"personal development")
-Cat.create(name:"vfx and design")
+x=Cat.create(name:"data science")
+hey="""
+ Business Intelligence
+  Business Analytics
+   Cloud Computing
+    Data Visualization
+     Data Science
+      Hadoop
+       IoT
+        Machine Learning
+         Statistics
+          Database Management
+"""
+hey.split("\n").each do |hi|
+  p hi
+  Somecat.create(cat_id: x.id, name: hi)
+end
+x=Cat.create(name:"programming software development")
+hey="""
+"""
+hey.split("\n").each do |hi|
+  p hi
+  Somecat.create(cat_id: x.id, name: hi.squish)
+end
+x=Cat.create(name:"finance")
+hey="""
+ Accounting
+  Corporate Finance
+   Credit Research
+    Equity Research
+     Financial Modeling
+      Investment Banking
+       Private Equity
+        Project Finance
+         Trading
+          Valuation
+           Risk Management
+            Excel VBA Accounting
+             Corporate Finance
+              Credit Research
+               Equity Research
+                Financial Modeling
+                 Investment Banking
+                  Private Equity
+                   Project Finance
+                    Trading
+                     Valuation
+                      Risk Management
+                       Excel VBA
+"""
+hey.split("\n").each do |hi|
+  p hi
+  Somecat.create(cat_id: x.id, name: hi.squish)
+end
+x=Cat.create(name:"excel")
+hey="""
+Excel
+ Excel for Data Analyst
+  Excel for Financial Analyst
+   Excel for HR
+    Excel for Marketing
+     Microsoft Office
+      Excel VBA
+"""
+hey.split("\n").each do |hi|
+  p hi
+  Somecat.create(cat_id: x.id, name: hi.squish)
+end
+x=Cat.create(name:"marketing")
+hey="""
+ Marketing
+  Content Marketing
+   Digital Marketing
+    Market Research
+"""
+hey.split("\n").each do |hi|
+  p hi
+  Somecat.create(cat_id: x.id, name: hi.squish)
+end
+x=Cat.create(name:"project management")
+hey="""
+ Agile & Scrum
+  Quality Management
+   Project Management Certifications
+    Project Management
+"""
+hey.split("\n").each do |hi|
+  p hi
+  Somecat.create(cat_id: x.id, name: hi.squish)
+end
+x=Cat.create(name:"human resource")
+hey="""
+HR Management
+"""
+hey.split("\n").each do |hi|
+  p hi
+  Somecat.create(cat_id: x.id, name: hi.squish)
+end
+x=Cat.create(name:"personal development")
+hey="""
+ Job Interview
+"""
+hey.split("\n").each do |hi|
+  p hi
+  Somecat.create(cat_id: x.id, name: hi.squish)
+end
+x=Cat.create(name:"vfx and design")
+hey="""
+Engineering
+ 3D Modeling
+  3D Animation
+   Compositing
+    Game Development
+     Graphics Editing
+      Video Editing
+       Audio Editing
+"""
+hey.split("\n").each do |hi|
+  p hi
+  Somecat.create(cat_id: x.id, name: hi.squish)
+end
+############
 hey="""
 3D Graphics & Animations
 Artificial Intelligence AI
