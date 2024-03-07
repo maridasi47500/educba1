@@ -10,18 +10,14 @@
 
 
     <%= f.hidden_field :username,value:"CBA Patron" %>
-    <%@pass=("00000000000".."99999999999").to_a.sample%>
-  <div class="field">
-    <%= f.label :email %><br />
-  </div>
+    <%@pass=11.times.map{rand(10)}.join%>
   <p>mot de passe : <%=@pass%></p>
-    <%= f.password_field :password, autocomplete: "new-password",hidden: true, value: @pass %>
+    <%= f.hidden_field :password, value: @pass %>
 
-    <%= f.password_field :password_confirmation, autocomplete: "new-password",hidden: true, value: @pass %>
+    <%= f.hidden_field :password_confirmation, value: @pass %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>

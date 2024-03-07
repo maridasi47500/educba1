@@ -25,12 +25,21 @@
                                                                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                                                     Chercher
                                                                                                             </a>
-                                                                                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+                                                                                                                    <ul class="dropdown-menu multilevel " aria-labelledby="navbarDropdown">
                                                                                                                       <%Cat.all.each do |cat|%>
-                                                                                                                        <a class="dropdown-item" href="/voircat/<%=cat.id%>"><%=cat.name%></a>
+                                                                                                                        <li class="dropdown-submenu">
+                                                                                                                        <a class="dropdown-item" tabindex="-1" href="#" id="navbarDropdownCat<%=cat.id%>" role="button" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false"><%=cat.name%></a>
+                                                                                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownCat<%=cat.id%>">
+                                                                                                                          <a class="dropdown-item" href="#">item <%=cat.name%> 1</a>
+                                                                                                                                          <a class="dropdown-item" href="#">item 2</a>
+                                                                                                                                                    <div class="dropdown-divider"></div>
+                                                                                                                                          <a class="dropdown-item" href="#">item 3</a>
+                                                                                                                    </div>
+                                                                              </li>
                                                                                                                               <%end%>
-                                                                                                                                                                      </div>
+
+
+                                                                                                                                                                      </ul>
                                                                                                                                                                             </li>
                                   <li class="nav-item active">
                                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -41,7 +50,7 @@
                                                                               <li class="nav-item dropdown">
                                                                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                                           <div class="chip">
-                                                                                              <img src="img_avatar.jpg" alt="Person" width="96" height="96">
+                                                                                              <%= image_tag "img_person", alt: "Person", width:"96", height:"96"%>
                                                                                               <%=current_user.username%> 
                                                                                           </div>
                                                                                                             </a>
@@ -50,11 +59,9 @@
                                                                                                                                           <a class="dropdown-item" href="#">Another action</a>
                                                                                                                                                     <div class="dropdown-divider"></div>
                                                                                                                                                               <a class="dropdown-item" href="#">Something else here</a>
+                                                                                                                                                                                    <%= button_to "se déconnecter", destroy_user_session_path, class:'dropdown-item', method: :delete %>
                                                                                                                                                                       </div>
                                                                                                                                                                             </li>
-                                                                                                                                                                                  <li class="nav-item">
-                                                                                                                                                                                            <a class="nav-link disabled" href="#">Disabled</a>
-                                                                                                                                                                                                  </li>
                                                                                                                                                                                                       </ul>
                                                                                                                                                                                                           <form class="form-inline my-2 my-lg-0">
                                                                                                                                                                                                                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
