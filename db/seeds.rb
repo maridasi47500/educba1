@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 Cat.destroy_all
+Somecat.destroy_all
 x=Cat.create(name:"data science")
-hey="""
- Business Intelligence
+hey=""" Business Intelligence
   Business Analytics
    Cloud Computing
     Data Visualization
@@ -21,18 +21,29 @@ hey="""
 """
 hey.split("\n").each do |hi|
   p hi
-  Somecat.create(cat_id: x.id, name: hi)
+  Somecat.create(cat_id: x.id, name: hi.strip.strip)
 end
 x=Cat.create(name:"programming software development")
-hey="""
+hey=""" App Development
+  Cyber Security
+   Database
+    Java
+     JavaScript
+      Networking
+       Programming Languages
+        Software Testing
+         Virtualization
+          Web Development
+           Web Application Framework
+            Content Management System
+             Operating System
 """
 hey.split("\n").each do |hi|
   p hi
-  Somecat.create(cat_id: x.id, name: hi.squish)
+  Somecat.create(cat_id: x.id, name: hi.strip.strip)
 end
 x=Cat.create(name:"finance")
-hey="""
- Accounting
+hey=""" Accounting
   Corporate Finance
    Credit Research
     Equity Research
@@ -58,78 +69,65 @@ hey="""
 """
 hey.split("\n").each do |hi|
   p hi
-  Somecat.create(cat_id: x.id, name: hi.squish)
+  Somecat.create(cat_id: x.id, name: hi.strip.squish)
 end
 x=Cat.create(name:"excel")
-hey="""
-Excel
+hey="""Excel
  Excel for Data Analyst
   Excel for Financial Analyst
    Excel for HR
     Excel for Marketing
      Microsoft Office
-      Excel VBA
-"""
+      Excel VBA"""
 hey.split("\n").each do |hi|
   p hi
-  Somecat.create(cat_id: x.id, name: hi.squish)
+  Somecat.create(cat_id: x.id, name: hi.strip.strip)
 end
 x=Cat.create(name:"marketing")
-hey="""
- Marketing
+hey=""" Marketing
   Content Marketing
    Digital Marketing
-    Market Research
-"""
+    Market Research"""
 hey.split("\n").each do |hi|
   p hi
-  Somecat.create(cat_id: x.id, name: hi.squish)
+  Somecat.create(cat_id: x.id, name: hi.strip.squish)
 end
 x=Cat.create(name:"project management")
-hey="""
- Agile & Scrum
+hey=""" Agile & Scrum
   Quality Management
    Project Management Certifications
-    Project Management
-"""
+    Project Management"""
 hey.split("\n").each do |hi|
   p hi
-  Somecat.create(cat_id: x.id, name: hi.squish)
+  Somecat.create(cat_id: x.id, name: hi.strip.squish)
 end
 x=Cat.create(name:"human resource")
-hey="""
-HR Management
-"""
+hey="""HR Management"""
 hey.split("\n").each do |hi|
   p hi
-  Somecat.create(cat_id: x.id, name: hi.squish)
+  Somecat.create(cat_id: x.id, name: hi.strip.squish)
 end
 x=Cat.create(name:"personal development")
-hey="""
- Job Interview
-"""
+hey=""" Job Interview"""
 hey.split("\n").each do |hi|
   p hi
-  Somecat.create(cat_id: x.id, name: hi.squish)
+  Somecat.create(cat_id: x.id, name: hi.strip.squish)
 end
 x=Cat.create(name:"vfx and design")
-hey="""
-Engineering
+hey="""Engineering
  3D Modeling
   3D Animation
    Compositing
     Game Development
      Graphics Editing
       Video Editing
-       Audio Editing
-"""
+       Audio Editing"""
 hey.split("\n").each do |hi|
   p hi
-  Somecat.create(cat_id: x.id, name: hi.squish)
+  Somecat.create(cat_id: x.id, name: hi.strip.squish)
 end
 ############
-hey="""
-3D Graphics & Animations
+hey="""3D Graphics & Animations
 Artificial Intelligence AI
 Azure
 Business & Management
@@ -168,10 +166,9 @@ Six Sigma
 SPSS
 Supervised Machine Learning
 Time Series Analysis And Forecasting
-Unsupervised Machine Learning
-"""
+Unsupervised Machine Learning"""
 Othercat.destroy_all
 hey.split("\n").each do |hi|
   p hi
-  Othercat.create(name: hi)
+  Othercat.create(name: hi.strip)
 end
