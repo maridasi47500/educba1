@@ -1,9 +1,30 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @course %>
+<header>
+  <h1><%= @course.titre %></h1>
+  <p><%=@course.hours%>+ hours</p>
+</header>
+<main>
+  <p><b>curriculum:</b>
+  <%=simple_format(@course.curriculum)%></p>
+  <p>
+  &#127902; 
+  <%=@course.lectures.length%> 
+  <%="conférence".pluralize(@course.lectures.length)%> 
+
+  </p>
+  <p>
+  &#x1f553; 
+  <%=@course.nbminutes%> minute
+  <%="minutes".pluralize(@course.nbminutes.to_i)%> 
+
+  </p>
+</main>
+
 
 <div>
   <%= link_to "Edit this course", edit_course_path(@course) %> |
+  <%= link_to "Ajouter 1 lecture", addlecture_course_path(@course) %> |
   <%= link_to "Back to courses", courses_path %>
 
   <%= button_to "Destroy this course", @course, method: :delete %>

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  resources :lectures
   get 'hey/there'
-  resources :courses
+  resources :courses do
+    member do
+      get "addlecture"
+    end
+  end
   resources :othercats
   resources :cats, path: "cat"
   get "featuredskill", to: 'featuredskill#hey'

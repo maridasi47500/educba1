@@ -35,6 +35,15 @@
                 ) %>
   </div>
 
+    <%= form.fields_for :lectures do |f|%>
+
+  <div>
+    <%= f.label :text, style: "display: block" %>
+    <%= f.text_area :text %>
+  </div>
+    <%end %>
+
+
   <div>
     <%= form.submit %>
   </div>
