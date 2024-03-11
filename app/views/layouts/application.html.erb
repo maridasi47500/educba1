@@ -30,10 +30,10 @@
                                                                                                                         <li class="dropdown-submenu">
                                                                                                                         <a class="dropdown-item" tabindex="-1" href="#" id="navbarDropdownCat<%=cat.id%>" role="button" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false"><%=cat.name%></a>
                                                                                                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownCat<%=cat.id%>">
-                                                                                                                          <a class="dropdown-item" href="#">item <%=cat.name%> 1</a>
-                                                                                                                                          <a class="dropdown-item" href="#">item 2</a>
+                                                                                                                        <%cat.courses.each do |hey|%>
+                                                                                                                            <a class="dropdown-item" href="/courses/<%=hey.id%>"><%=hey.titre%></a>
+                                                                                                                        <%end%>
                                                                                                                                                     <div class="dropdown-divider"></div>
-                                                                                                                                          <a class="dropdown-item" href="#">item 3</a>
                                                                                                                     </div>
                                                                               </li>
                                                                                                                               <%end%>

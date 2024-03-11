@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
   has_many :course_have_somecats
+  has_many :user_start_courses
   has_many :somecats, through: :course_have_somecats
   has_and_belongs_to_many :somecats, :join_table => :course_have_somecats
   has_many :lectures

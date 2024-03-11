@@ -30,12 +30,19 @@
   </div>
   <div class="mycats">
     <%= form.label :somecat_ids, style: "display: block" %>
-    <%= form.select(:somecat_ids, [],{ :prompt => "Please select"},
+    <%= form.select(:somecat_ids, course.somecats.collect{|x|[x.name, x.id]},{ :prompt => "Please select"},
     { :multiple => true, :size => 5 }
                 ) %>
   </div>
 
+  <%@x=0%>
     <%= form.fields_for :lectures do |f|%>
+      <%@x+=1%>
+      <p>lecture <%=@x%></p>
+  <div>
+    <%= f.label :titre, style: "display: block" %>
+    <%= f.text_field :titre %>
+  </div>
 
   <div>
     <%= f.label :text, style: "display: block" %>

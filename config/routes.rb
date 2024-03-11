@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :courses do
     member do
       get "addlecture"
+      post "startcourse"
     end
   end
   resources :othercats

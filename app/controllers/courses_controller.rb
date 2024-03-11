@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show edit update destroy addlecture ]
+  before_action :set_course, only: %i[ startcourse show edit update destroy addlecture ]
+  before_action :authenticate_user!, only: %i[startcourse]
 
   # GET /courses or /courses.json
   def index
@@ -7,7 +8,16 @@ class CoursesController < ApplicationController
   end
 
   # GET /courses/1 or /courses/1.json
+  def startcourse
+    @course.user_start_courses.create!(user_id: current_user.id)
+  end
   def show
+    if @course.user_start_courses.where(user_id: current_user.id).length > 0
+      render :showhey
+    else
+      render :show
+    end
+
   end
 
   # GET /courses/new
@@ -21,6 +31,8 @@ class CoursesController < ApplicationController
   end
   def addlecture
     @course.lectures.new
+    @cats = Cat.all
+    render :edit
   end
 
   # POST /courses or /courses.json

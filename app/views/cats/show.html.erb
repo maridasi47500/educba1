@@ -13,6 +13,19 @@
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">...</div>
 
 </div>
+<div id="div1">
+<div class="class1">
+<%@cat.somecats.each do |hey|%>
+  <%=label_tag "checkbox"+hey.id.to_s, hey.name do%>
+    <%=hey.name%>
+  <%=check_box_tag 'heycat', hey.id, false, id:"checkbox"+hey.id.to_s%>
+<%end%>
+
+<%end%>
+</div>
+<div class="class2">
+</div>
+</div>
 
 
 <div>

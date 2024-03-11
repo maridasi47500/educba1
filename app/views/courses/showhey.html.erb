@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+<header>
+  <h1><%= @course.titre %></h1>
+  <p><%=@course.hours%>+ hours</p>
+</header>
+<main>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <%paspremier=false%>
+    <%@course.lectures.each do |hey|%>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link <%=paspremier ? "" : "active"%>" id="pills-tab-<%=hey.id%>" data-bs-toggle="pill" data-bs-target="#pills-<%=hey.id%>" type="button" role="tab" aria-controls="pills-<%=hey.id%>" aria-selected="true"><%=hey.titre%></button>
+              </li>
+    <%paspremier=true%>
+            <%end%>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <%paspremier=false%>
+    <%@course.lectures.each do |hey|%>
+      <div class="tab-pane fade <%= paspremier ? "" : "show"%> <%=paspremier ? "" : "active"%>" id="pills-<%=hey.id%>" role="tabpanel" aria-labelledby="pills-home-<%=hey.id%>"><%=simple_format(hey.text)%></div>
+    <%paspremier=true%>
+            <%end%>
+  </div>
+</main>
+
+
+<div>
+  <%= link_to "Edit this course", edit_course_path(@course) %> |
+  <%= link_to "Ajouter 1 lecture", addlecture_course_path(@course) %> |
+  <%= link_to "Back to courses", courses_path %>
+
+  <%= button_to "Destroy this course", @course, method: :delete %>
+</div>
