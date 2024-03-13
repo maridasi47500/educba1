@@ -1,4 +1,8 @@
+
 $(function(){
+$('[src="/heyjs.js"]')[0].src="/heyjs.js";
+
+
 	$(".hey").change(function(){
 	                $.ajax({url:"/hey/there?id="+$(this).val(),
 				                        success:function(data){

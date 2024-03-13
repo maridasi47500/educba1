@@ -19,6 +19,16 @@
   <%="minutes".pluralize(@course.nbminutes.to_i)%> 
 
   </p>
+  <p>
+  <%@note=@course.note%>
+  <span class="badge"><%=@note%></span>
+  <%(@note).times do%>
+    <span style="color:yellow;">&#9733</span>
+  <%end%>
+  <%(5 - @note).times do%>
+    <span style="color:white;">&#9733</span>
+  <%end%>
+  </p>
 </main>
 
 

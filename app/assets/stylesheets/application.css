@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-#overlay {
+#overlay,#overlay1 {
 	  position: fixed; /* Sit on top of the page content */
 	    display: none; /* Hidden by default */
 	      width: 100%; /* Full width (cover the whole page) */
@@ -26,7 +26,7 @@
 			    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
 			      cursor: pointer; /* Add a pointer on hover */
 		      }
-		      #text{
+		      #text,#text1{
 			        position: absolute;
 				  top: 50%;
 				    left: 50%;
@@ -100,3 +100,48 @@
 																					    -moz-border-radius: 6px 0 6px 6px;
 																					        border-radius: 6px 0 6px 6px;
 																					}
+																					* {
+																						   margin: 0;
+																						     padding: 0;
+																						       box-sizing: border-box;
+																						       }
+																						        
+																						        body {
+																							                    background: hsl(137, 46%, 24%);
+																							                      font-family: "Poppins", sans-serif;
+																							                      }
+																							                       
+																							                       .card-start-rating {
+																								                         max-width: 33rem;
+																								                           background: #fff;
+																								                             margin: 0 1rem;
+																								                               padding: 1rem;
+																								                                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+																								                                   width: 100%;
+																								                                     border-radius: 0.5rem;
+																								                                     }
+																								                                      
+																								                                      .star {
+																									                                        font-size: 10vh;
+																									                                          cursor: pointer;
+																									                                          }
+																									                                           
+																									                                           .one {
+																										                                             color: rgb(255, 0, 0);
+																										                                             }
+																										                                              
+																										                                              .two {
+																											                                                color: rgb(255, 106, 0);
+																											                                                }
+																											                                                 
+																											                                                 .three {
+																												                                                   color: rgb(251, 255, 120);
+																												                                                   }
+																												                                                    
+																												                                                    .four {
+																													                                                      color: rgb(255, 255, 0);
+																													                                                      }
+																													                                                       
+																													                                                       .five {
+																														                                                         color: rgb(24, 159, 14);
+																														                                                         }

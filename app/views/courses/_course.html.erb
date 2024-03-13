@@ -1,17 +1,15 @@
-<div id="<%= dom_id course %>">
-  <p>
-    <strong>Titre:</strong>
-    <%= course.titre %>
-  </p>
-
-  <p>
-    <strong>Nbminutes:</strong>
-    <%= course.nbminutes %>
-  </p>
-
-  <p>
-    <strong>Curriculum:</strong>
-    <%= course.curriculum %>
-  </p>
-
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%=course.titre%></h5>
+        <p class="card-text"><%note=course.note%>
+          <span class="badge"><%=note%></span>
+          <%(note).times do%>
+              <span style="color:yellow;">&#9733</span>
+          <%end%>
+          <%(5 - note).times do%>
+              <span style="color:white;">&#9733</span>
+          <%end%></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
 </div>

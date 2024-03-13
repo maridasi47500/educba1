@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :votes
   resources :lectures
   get 'hey/there'
   resources :courses do

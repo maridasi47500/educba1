@@ -3,6 +3,8 @@
 <header>
   <h1><%= @course.titre %></h1>
   <p><%=@course.hours%>+ hours</p>
+  <p><span onclick="document.getElementById('overlay1').style.display = 'block';">&#9733;</span></p>
+
 </header>
 <main>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -31,3 +33,29 @@
 
   <%= button_to "Destroy this course", @course, method: :delete %>
 </div>
+<div id="overlay1">
+<div id="text1">
+  <span class="close" onclick="overlay1.style.display='none';">X</span>
+  <p> évaluation du cours </p>
+   <p class="card-star-rating-message">
+     Veuillez partager vos commentaires.
+     Appuyez sur une étoile pour l'évaluer.
+                     </p>
+   <div class="card-star-rating">
+                     <%(1..5).each do |hey|%>
+                       <span onclick="gfg(<%=hey%>)"
+                                             class="star">★
+                                                     </span>
+                                                   <%end%>
+                                                                                                                                                                                             <h3 id="output">
+                                                                                                                                                                                                             Rating is: 0/5
+                                                                                                                                                                                                                       </h3>
+                                                                                                                                                                                                                           </div>
+                                                                                                                                                                                                                           <div id="vote1" class="text-danger"></div>
+
+                                                                                                                                                                                                                           <button onclick="heythere(<%=current_user.id%>, <%=@course.id%>)">
+                                                                                                                                                                                                                             Envoyer la note
+                                                                                                                                                                                                                           </button>
+</div>
+</div>
+
