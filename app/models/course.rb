@@ -12,8 +12,14 @@ class Course < ApplicationRecord
   def hours
     self.nbminutes.to_i/60.to_i
   end
+  def self.popular
+    Course.joins(:votes).select("courses.*, avg(cast(votes.note as float)) as myvalue").group("courses.id").having("myvalue > ?", 3)
+  end
+  def self.trendingnew
+    Course.joins(:votes).select("courses.*, avg(cast(votes.note as float)) as myvalue").group("courses.id").having("courses.created_at > ? and myvalue > ?",1.months.ago, 3)
+  end
   def note
-    Course.joins(:votes).select("courses.*, moy(cast(votes.note as float)) as myvalue").group("courses.id")[0].myvalue
+    Course.joins(:votes).select("courses.*, avg(cast(votes.note as float)) as myvalue").group("courses.id").having("courses.id = ?",self.id)[0].myvalue.to_i
   rescue
     5
   end
