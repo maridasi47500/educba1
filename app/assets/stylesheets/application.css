@@ -145,3 +145,13 @@
 																													                                                       .five {
 																														                                                         color: rgb(24, 159, 14);
 																														                                                         }
+																																					 #div1{
+																																						 padding-top: 50px;
+																																						 padding-bottom: 50px;
+																																					 }
+																																					 div#div1 div {
+																																						     float: left;
+																																						         display: block;
+																																							     clear: both;
+																																							         min-height: 100px;
+																																							 }

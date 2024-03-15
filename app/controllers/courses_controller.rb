@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
     @course.user_start_courses.create!(user_id: current_user.id)
   end
   def show
-    if @course.user_start_courses.where(user_id: current_user.id).length > 0
+    if user_signed_in? and @course.user_start_courses.where(user_id: current_user.id).length > 0
       render :showhey
     else
       render :show

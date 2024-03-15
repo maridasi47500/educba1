@@ -33,10 +33,16 @@
 
 
 <div>
+  <%if user_signed_in?%>
   <%= button_to "Join this course", startcourse_course_path(@course), method: :post %>
+
   <%= link_to "Edit this course", edit_course_path(@course) %> |
   <%= link_to "Ajouter 1 lecture", addlecture_course_path(@course) %> |
   <%= link_to "Back to courses", courses_path %>
+
+<%end%>
+  <%= link_to "Back to all the courses", cat_path(@course.catid) %>
+
 
 
   <%= button_to "Destroy this course", @course, method: :delete %>

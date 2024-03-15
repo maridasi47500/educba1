@@ -2,6 +2,10 @@ class CatsController < ApplicationController
   before_action :set_cat, only: %i[ show edit update destroy ]
 
   # GET /cats or /cats.json
+  def course
+    @course=Cat.search(params[:myids])
+    render layout: false
+  end
   def index
     @cats = Cat.all
   end

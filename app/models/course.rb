@@ -2,7 +2,12 @@ class Course < ApplicationRecord
   has_many :course_have_somecats
   has_many :user_start_courses
   has_many :somecats, through: :course_have_somecats
-  has_and_belongs_to_many :somecats, :join_table => :course_have_somecats
+
+  #has_and_belongs_to_many :somecats, :join_table => :course_have_somecats
+
+  def catid
+    course_have_somecats[0].cat.id
+  end
   has_many :lectures
   has_many :votes
   accepts_nested_attributes_for :lectures, allow_destroy: true

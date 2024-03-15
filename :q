@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   resources :othercats
   resources :cats, path: "cat"
-  get "cours", to: 'cats#course'
+  get "course", to: 'cats#course'
   get "featuredskill", to: 'featuredskill#hey'
   get 'home/index'
   devise_for :users, controllers: { registrations: 'users/registrations',sessions: 'users/sessions' }
